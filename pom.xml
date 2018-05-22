@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.springframework.samples</groupId>
-    <artifactId>spring-petclinic</artifactId>
-    <version>4.2.5-SNAPSHOT</version>
+    <artifactId>petclinic</artifactId>
+    <version>1.1</version>
 
     <name>petclinic</name>
     <packaging>war</packaging>
@@ -315,7 +315,7 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                    <warName>petclinic</warName>
+                    <warName>petclinic-1.1</warName>
                 </configuration>
             </plugin>
             <plugin>
@@ -359,12 +359,14 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <server>tomcat-development-server</server>
-                    <port>9966</port>
-                    <path>/petclinic</path>
+                     <url>http://localhost:8080/manager/text</url>
+                     <server>TomcatServer</server>
+                     <path>/petclinic</path>
+                     <username>deployer</username>
+                     <password>deployer</password>
                 </configuration>
             </plugin>
-            <plugin>
+	    <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>${cobertura.version}</version>
